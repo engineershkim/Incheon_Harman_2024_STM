@@ -60,8 +60,8 @@ all: main-build
 main-build: my_prj.elf secondary-outputs
 
 # Tool invocations
-my_prj.elf my_prj.map: $(OBJS) $(USER_OBJS) C:\Users\user\STM32CubeIDE\workspace_1.16.1\my_prj\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "my_prj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\STM32CubeIDE\workspace_1.16.1\my_prj\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_prj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+my_prj.elf my_prj.map: $(OBJS) $(USER_OBJS) C:\Users\user\source\repos\Incheon_Harman_2024_STM\my_prj\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "my_prj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\source\repos\Incheon_Harman_2024_STM\my_prj\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_prj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
