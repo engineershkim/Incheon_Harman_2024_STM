@@ -1,0 +1,5 @@
+../Core/Src/mlib.c:13:5:__io_putchar	1
+../Core/Src/mlib.c:18:6:StandBy	2
+../Core/Src/mlib.c:23:6:ProgramStart	1
+../Core/Src/mlib.c:32:6:cls	1
+../Core/Src/mlib.c:36:6:Cursor	1
