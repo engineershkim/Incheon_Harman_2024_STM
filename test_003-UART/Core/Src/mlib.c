@@ -8,6 +8,15 @@
 #include "main.h"
 UART_HandleTypeDef huart2;
 
+int __io_getchar(void)
+{
+	int ch;
+	while(HAL_UART_Receive(&huart2, &ch, 1, 10) != HAL_OK); // 1 char receive
+	return ch;
+
+}
+
+
 int __io_putchar(int ch)
 {
 	HAL_UART_Transmit(&huart2,&ch, 1, 10);
