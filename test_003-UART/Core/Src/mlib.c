@@ -6,12 +6,18 @@
  */
 
 #include "main.h"
-UART_HandleTypeDef huart2;
+#include <stdio.h>
+
+
+extern UART_HandleTypeDef huart2;
 
 int __io_getchar(void)
 {
-	int ch;
+	char ch;
 	while(HAL_UART_Receive(&huart2, &ch, 1, 10) != HAL_OK); // 1 char receive
+	HAL_UART_Transmit(&huart2, &ch, 1, 10); // echo
+	if(ch == '\r') HAL_UART_Transmit(&huart2, "\n", 1, 10);
+	// CR : 캐리지리턴  LF : 라인피드
 	return ch;
 
 }
@@ -35,6 +41,7 @@ void ProgramStart(char * str)
 	printf("Program Start - %s", str);
 	printf("Press Blue_button(B1) to Start...\r\n");
 	StandBy();
+	setvbuf(stdin, NULL, _IONBF, 0);
 }
 void cls()
 {

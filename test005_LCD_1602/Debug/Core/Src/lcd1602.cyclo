@@ -6,4 +6,5 @@
 ../Core/Src/lcd1602.c:86:6:lcd_init	1
 ../Core/Src/lcd1602.c:96:6:lcd_test	1
 ../Core/Src/lcd1602.c:106:6:lcd_print	2
-../Core/Src/lcd1602.c:111:6:lcd_printEx	3
+../Core/Src/lcd1602.c:112:6:lcd_printEx	3
+../Core/Src/lcd1602.c:120:6:lcd_printEx2	3

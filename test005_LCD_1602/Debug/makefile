@@ -60,8 +60,8 @@ all: main-build
 main-build: test005_LCD_1602.elf secondary-outputs
 
 # Tool invocations
-test005_LCD_1602.elf test005_LCD_1602.map: $(OBJS) $(USER_OBJS) C:\Users\user\source\repos\test005_LCD_1602\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "test005_LCD_1602.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\source\repos\test005_LCD_1602\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test005_LCD_1602.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+test005_LCD_1602.elf test005_LCD_1602.map: $(OBJS) $(USER_OBJS) C:\Users\user\source\repos\Incheon_Harman_2024_STM\test005_LCD_1602\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "test005_LCD_1602.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\source\repos\Incheon_Harman_2024_STM\test005_LCD_1602\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test005_LCD_1602.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

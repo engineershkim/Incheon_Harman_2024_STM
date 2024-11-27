@@ -100,8 +100,14 @@ int main(void)
   i2c_init(&hi2c1);
   i2c_scan();
 
-  lcd_init(); HAL_Delay(10);
-  lcd_test();
+  lcd_init();
+  lcd_print("hello ");
+  lcd_print("Good afternoon");
+  int i;
+  printf("Scanf test. Input any number : ");
+  scanf("%d", &i);
+  printf("Input number = %d\r\n", i);
+
   //lcd_print("Hello");
   //lcd_print("");
 
@@ -109,9 +115,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  char buf[20];
   while (1)
   {
-    /* USER CODE END WHILE */
+	  printf("Scanf test. Input any number : ");
+	  scanf("%d", &i);
+	  //lcd_print("Input number = %d", i);
+	  sprintf(buf, "Input number = %d", i);
+
+	  lcd_printEx2(buf);
+	  //lcd_printEX2(buf);
+	  /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
